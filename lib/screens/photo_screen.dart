@@ -14,7 +14,7 @@ class PhotoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Media Upload App')),
+      appBar: AppBar(title: const Text('Media Upload App')),
       body: Column(
         children: [
           Expanded(child: MediaList()),
@@ -80,17 +80,17 @@ class _MediaInputState extends State<MediaInput> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           TextField(
             controller: _animalController,
-            decoration: InputDecoration(labelText: 'Animal Name'),
+            decoration: const InputDecoration(labelText: 'Animal Name'),
           ),
           TextField(
             controller: _farmController,
-            decoration: InputDecoration(labelText: 'Farm Name'),
+            decoration: const InputDecoration(labelText: 'Farm Name'),
           ),
           SingleChildScrollView(
             child: Column(
@@ -99,35 +99,25 @@ class _MediaInputState extends State<MediaInput> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ElevatedButton.icon(
-                      icon: Icon(Icons.camera),
-                      label: Text('Photo'),
+                      icon: const Icon(Icons.camera),
+                      label: const Text('Photo'),
                       onPressed: () => _pickMedia(ImageSource.camera, false),
                     ),
-                    // ElevatedButton.icon(
-                    //   icon: Icon(Icons.video_call),
-                    //   label: Text('Video'),
-                    //   onPressed: () => _pickMedia(ImageSource.camera, true),
-                    // ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ElevatedButton.icon(
-                      icon: Icon(Icons.photo_library),
-                      label: Text('Photo from Gallery'),
+                      icon: const Icon(Icons.photo_library),
+                      label: const Text('Photo from Gallery'),
                       onPressed: () => _pickMedia(ImageSource.gallery, false),
                     ),
-                    // ElevatedButton.icon(
-                    //   icon: Icon(Icons.video_library),
-                    //   label: Text('Video from Gallery'),
-                    //   onPressed: () => _pickMedia(ImageSource.gallery, true),
-                    // ),
                   ],
                 ),
                 ElevatedButton.icon(
-                  icon: Icon(Icons.upload),
-                  label: Text('Upload'),
+                  icon: const Icon(Icons.upload),
+                  label: const Text('Upload'),
                   onPressed: () => _uploadAllMedia(context),
                 ),
               ],
@@ -150,7 +140,7 @@ class MediaList extends StatelessWidget {
             final media = mediaProvider.mediaList[index];
             return ListTile(
               leading: media.filePath.endsWith('.mp4')
-                  ? Icon(Icons.video_library)
+                  ? const Icon(Icons.video_library)
                   : Image.file(File(media.filePath), width: 50, height: 50),
               title: Text(media.animalName),
               subtitle: Text('${media.farmName} - ${media.timestamp}'),

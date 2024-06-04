@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/media_data.dart';
 
 class MediaProvider with ChangeNotifier {
-  List<MediaData> _mediaList = [];
+  final List<MediaData> _mediaList = [];
 
   List<MediaData> get mediaList => _mediaList;
 
