@@ -5,10 +5,12 @@ import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
 
-import './models/media_data.dart';
-import './providers/media_provider.dart';
+import '../models/media_data.dart';
+import '../providers/media_provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class VideoScreen extends StatelessWidget {
+  static const routeName = '/video-screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,11 +98,11 @@ class _MediaInputState extends State<MediaInput> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton.icon(
-                      icon: Icon(Icons.camera),
-                      label: Text('Photo'),
-                      onPressed: () => _pickMedia(ImageSource.camera, false),
-                    ),
+                    // ElevatedButton.icon(
+                    //   icon: Icon(Icons.camera),
+                    //   label: Text('Photo'),
+                    //   onPressed: () => _pickMedia(ImageSource.camera, false),
+                    // ),
                     ElevatedButton.icon(
                       icon: Icon(Icons.video_call),
                       label: Text('Video'),
@@ -111,11 +113,11 @@ class _MediaInputState extends State<MediaInput> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton.icon(
-                      icon: Icon(Icons.photo_library),
-                      label: Text('Photo from Gallery'),
-                      onPressed: () => _pickMedia(ImageSource.gallery, false),
-                    ),
+                    // ElevatedButton.icon(
+                    //   icon: Icon(Icons.photo_library),
+                    //   label: Text('Photo from Gallery'),
+                    //   onPressed: () => _pickMedia(ImageSource.gallery, false),
+                    // ),
                     ElevatedButton.icon(
                       icon: Icon(Icons.video_library),
                       label: Text('Video from Gallery'),
@@ -147,7 +149,7 @@ class MediaList extends StatelessWidget {
           itemBuilder: (ctx, index) {
             final media = mediaProvider.mediaList[index];
             return ListTile(
-              leading: media.filePath.endsWith('.mp4')
+              leading: media.isVideo
                   ? Icon(Icons.video_library)
                   : Image.file(File(media.filePath), width: 50, height: 50),
               title: Text(media.animalName),

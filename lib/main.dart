@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'home_screen.dart';
-import '../providers/media_provider.dart';
+import 'screens/photo_screen.dart';
+import 'screens/video_screen.dart';
+import 'screens/landing_screen.dart';
+import 'providers/media_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +29,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomeScreen(),
+        home: LandingScreen(),
+        routes: {
+          PhotoScreen.routeName: (ctx) => PhotoScreen(),
+          VideoScreen.routeName: (ctx) => VideoScreen(),
+        },
       ),
     );
   }
