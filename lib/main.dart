@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:media_upload/services/video_selector.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/photo_screen.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         routes: {
           PhotoScreen.routeName: (ctx) => PhotoScreen(),
           VideoScreen.routeName: (ctx) => VideoScreen(),
+          VideoSelector.routeName: (ctx) => VideoSelector(),
         },
       ),
     );

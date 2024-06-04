@@ -30,6 +30,8 @@
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Needed for recording videos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library Access</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Needed for recording videos.</string>
 	<key>NSAppTransportSecurity</key>

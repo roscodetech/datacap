@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'camera_screen.dart';
+// import 'package:image_picker/image_picker.dart';
+import 'package:media_upload/services/video_selector.dart';
+// import 'camera_screen.dart';
 import 'photo_screen.dart';
 import 'video_screen.dart';
 
 class LandingScreen extends StatelessWidget {
-  final ImagePicker _picker = ImagePicker();
+  // final ImagePicker _picker = ImagePicker();
 
   LandingScreen({super.key});
 
@@ -20,17 +21,10 @@ class LandingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () async {
-                final XFile? video =
-                    await _picker.pickVideo(source: ImageSource.camera);
-                if (video != null) {
-                  Navigator.of(context).pushNamed(
-                    CameraScreen.routeName,
-                    arguments: video.path,
-                  );
-                }
+              onPressed: () {
+                Navigator.of(context).pushNamed(VideoSelector.routeName);
               },
-              child: const Text('Capture Video'),
+              child: const Text('Go to Video Select Screen'),
             ),
             ElevatedButton(
               onPressed: () {
