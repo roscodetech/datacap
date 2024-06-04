@@ -1,0 +1,15 @@
+# Set the default behavior to automatically normalize line endings.
+* text=auto
+
+# Explicitly set the line endings for certain file types.
+*.c text
+*.cc text
+*.cpp text
+*.h text
+*.hpp text
+*.java text
+*.js text
+*.json text
+*.md text
+*.py text
+*.sh text eol=lf

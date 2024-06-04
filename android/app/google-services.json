@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502454218028",
+    "project_id": "media-upload-project",
+    "storage_bucket": "media-upload-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502454218028:android:83cf68672b218a11021089",
+        "android_client_info": {
+          "package_name": "com.roscode.media_upload"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrgp0v12XTtTYgGR0kTF4yFQWOD_Q8YaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
