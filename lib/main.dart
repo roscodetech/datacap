@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             if (args != null) {
               return MaterialPageRoute(
                 builder: (context) {
-                  return CameraScreen(filePath: args);
+                  return CameraScreen();
                 },
               );
             }
@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
         routes: {
           PhotoScreen.routeName: (ctx) => PhotoScreen(),
           VideoScreen.routeName: (ctx) => VideoScreen(),
+          CameraScreen.routeName: (ctx) => CameraScreen(),
           VideoSelector.routeName: (ctx) => VideoSelector(),
         },
       ),

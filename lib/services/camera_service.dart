@@ -41,7 +41,7 @@ class _CameraServiceState extends State<CameraService> {
       setState(() => _isRecording = false);
       final route = MaterialPageRoute(
         fullscreenDialog: true,
-        builder: (_) => CameraScreen(filePath: file.path),
+        builder: (_) => CameraScreen(),
       );
       Navigator.push(context, route);
     } else {

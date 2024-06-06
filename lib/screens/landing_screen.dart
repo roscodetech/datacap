@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:image_picker/image_picker.dart';
 import 'package:media_upload/services/video_selector.dart';
-// import 'camera_screen.dart';
+import 'camera_screen.dart';
 import 'photo_screen.dart';
 import 'video_screen.dart';
 
@@ -20,6 +20,12 @@ class LandingScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(CameraScreen.routeName);
+              },
+              child: const Text('Go to Camera'),
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(VideoSelector.routeName);
