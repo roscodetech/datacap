@@ -16,9 +16,13 @@ allprojects {
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(":app")
+
+    project.tasks.whenTaskAdded { task ->
+        if (task instanceof JavaCompile) {
+            task.options.compilerArgs << '-Xlint:-options'
+        }
+    }
 }
 
 tasks.register("clean", Delete) {
